@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Saeid Pourmand — Ph.D. researcher in Artificial Intelligence at Oregon State University. Efficient machine learning, randomized representations, and low-precision neural networks.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Saeid Pourmand</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Saeid Pourmand, home">SP<span class="brand-dot">.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#publications">Publications</a>
+        <a href="CurriculumVitae-SaeidPourmand.pdf" target="_blank" rel="noopener">Curriculum Vitae <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="identity">
+            <!-- To add a real portrait, replace assets/photo-placeholder.svg with your photo and update src below. -->
+            <img class="portrait" src="assets/photo-placeholder.svg" alt="Photo placeholder for Saeid Pourmand" width="78" height="78">
+            <h1 id="hero-title">Saeid Pourmand</h1>
+          </div>
+          <p class="eyebrow">Ph.D. researcher · Artificial Intelligence</p>
+          <p class="hero-description">I am a <strong>Ph.D. researcher in Artificial Intelligence at Oregon State University</strong>, where I began my doctorate in September 2023 and expect to graduate in June 2027. Advised by <strong>Prof. Alireza Aghasi</strong>, my work brings together statistical theory, randomized representations, and practical evaluation of neural networks.</p>
+          <p class="opportunity">I am seeking <strong>postdoctoral positions</strong> in efficient machine learning, low-precision neural networks, and randomized representations.</p>
+          <div class="hero-actions">
+            <a class="button-primary" href="CurriculumVitae-SaeidPourmand.pdf" target="_blank" rel="noopener">Curriculum Vitae <span aria-hidden="true">↗</span></a>
+            <a class="button-text" href="https://scholar.google.com/citations?user=ORbUAUoAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar <span aria-hidden="true">↗</span></a>
+            <a class="button-text" href="mailto:pourmans@oregonstate.edu">Email <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <figure class="hero-art">
+          <img src="assets/research-visual.svg" alt="Randomized features mapped into a compact binary neural representation" width="840" height="500">
+          <figcaption>Randomized representations · Low-bit learning</figcaption>
+        </figure>
+      </section>
+
+      <section class="section section-work" id="work" aria-labelledby="work-heading">
+        <div class="section-heading"><h2 id="work-heading">Selected work</h2><span>01 / Research</span></div>
+        <div class="work-grid">
+          <article class="work-card">
+            <span class="work-meta">2026 · Low-bit learning</span>
+            <h3>Angular Networks</h3>
+            <p>Learning with randomized estimators of angular similarity, bringing geometric ideas into efficient low-precision neural networks.</p>
+            <a href="https://scholar.google.com/citations?user=ORbUAUoAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Explore publication <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="work-card">
+            <span class="work-meta">2025 · Binary neural networks</span>
+            <h3>G-Net</h3>
+            <p>A construction that embeds full-precision networks into high-dimensional binary representations, without retraining or fine-tuning.</p>
+            <a href="https://github.com/GNet2025/GNet" target="_blank" rel="noopener noreferrer">View code <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-publications" id="publications" aria-labelledby="publications-heading">
+        <div class="section-heading"><h2 id="publications-heading">Selected publications</h2><span>02 / Papers</span></div>
+        <ol class="paper-list">
+          <li><span class="paper-year">2026</span><div><h3>Angular Networks: Low-Bit Learning from Randomized Similarity Estimators</h3><p>Advances in Neural Information Processing Systems · To appear</p></div></li>
+          <li><span class="paper-year">2025</span><div><h3>G-Net: A Provably Easy Construction of High-Accuracy Random Binary Neural Networks</h3><p>Advances in Neural Information Processing Systems</p></div></li>
+          <li><span class="paper-year">2025</span><div><h3>Laplace-HDC: Understanding the Geometry of Binary Hyperdimensional Computing</h3><p>Journal of Artificial Intelligence Research</p></div></li>
+        </ol>
+        <a class="more-link" href="https://scholar.google.com/citations?user=ORbUAUoAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">All publications on Google Scholar <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <span>© <span id="year">2026</span> Saeid Pourmand</span>
+      <div><a href="mailto:pourmans@oregonstate.edu">Email</a><a href="https://github.com/pourmands" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://linkedin.com/in/saeidpourmand1" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
