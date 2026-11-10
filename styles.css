@@ -7,7 +7,7 @@
   --line: #e9e9e9;
   --panel: #f6f6f6;
   --white: #fff;
-  --hero-photo-width: 200px; /* Increase or decrease this value. */
+  --hero-photo-width: 190px; /* Increase or decrease this value. */
 }
 
 * { box-sizing: border-box; }
@@ -37,22 +37,31 @@ p, h1, h2, h3, figure { margin: 0; }
 .site-header nav a { font-size: 13px; color: #5d5d5d; transition: color .2s; }
 .site-header nav a:hover { color: #111; }
 
-/* Intro with a modestly sized profile photo in the former SVG position. */
+/* The portrait sits beside the introduction on desktop, and above it on phones. */
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: clamp(28px, 5vw, 64px);
+  grid-template-columns: minmax(0, 1fr) var(--hero-photo-width);
+  grid-template-areas: "copy photo";
+  align-items: start;
+  gap: clamp(24px, 4vw, 56px);
   min-height: auto;
   padding: 83px 0 95px;
   border-bottom: 1px solid var(--line);
 }
-.hero-copy { min-width: 0; max-width: 850px; padding-right: 0; }
+.hero-copy {
+  grid-area: copy;
+  min-width: 0;
+  max-width: 850px;
+  padding-right: 0;
+}
 .identity { display: flex; align-items: center; margin-bottom: 23px; }
 .hero-photo {
+  grid-area: photo;
   width: var(--hero-photo-width);
   max-width: 100%;
   justify-self: end;
+  align-self: start;
+  margin-top: 8px;
 }
 .hero-photo img {
   display: block;
@@ -156,13 +165,22 @@ p, h1, h2, h3, figure { margin: 0; }
 }
 @media (max-width: 850px) {
   .hero { padding: 65px 0 75px; gap: 24px; }
+  .hero { grid-template-columns: minmax(0, 1fr) min(var(--hero-photo-width), 170px); }
   .hero-photo { width: min(var(--hero-photo-width), 170px); }
   .identity h1 { font-size: clamp(36px, 6vw, 54px); }
   .work-grid { gap: 12px; }
 }
 @media (max-width: 690px) {
-  .hero { display: flex; flex-direction: column; align-items: flex-start; }
-  .hero-photo { order: -1; width: min(var(--hero-photo-width), 135px); align-self: flex-start; }
+  .hero { gap: 20px; grid-template-columns: minmax(0, 1fr) 135px; }
+  .hero-photo { width: 135px; }
+}
+@media (max-width: 580px) {
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-areas: "photo" "copy";
+    gap: 22px;
+  }
+  .hero-photo { justify-self: start; width: min(var(--hero-photo-width), 135px); margin-top: 0; }
 }
 @media (max-width: 580px) {
   .site-shell { padding: 0 22px; }
