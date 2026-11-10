@@ -7,6 +7,7 @@
   --line: #e9e9e9;
   --panel: #f6f6f6;
   --white: #fff;
+  --hero-photo-width: 200px; /* Increase or decrease this value. */
 }
 
 * { box-sizing: border-box; }
@@ -36,23 +37,32 @@ p, h1, h2, h3, figure { margin: 0; }
 .site-header nav a { font-size: 13px; color: #5d5d5d; transition: color .2s; }
 .site-header nav a:hover { color: #111; }
 
-/* Single-column introduction: no decorative illustration or empty second column. */
+/* Intro with a modestly sized profile photo in the former SVG position. */
 .hero {
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(28px, 5vw, 64px);
   min-height: auto;
   padding: 83px 0 95px;
   border-bottom: 1px solid var(--line);
 }
-.hero-copy { max-width: 850px; padding-right: 0; }
-.identity { display: flex; align-items: center; gap: 20px; margin-bottom: 23px; }
-.portrait {
-  flex: none;
-  width: 76px;
-  height: 76px;
+.hero-copy { min-width: 0; max-width: 850px; padding-right: 0; }
+.identity { display: flex; align-items: center; margin-bottom: 23px; }
+.hero-photo {
+  width: var(--hero-photo-width);
+  max-width: 100%;
+  justify-self: end;
+}
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 6;
   object-fit: cover;
-  border-radius: 50%;
-  border: 1px solid #e6e6e6;
-  background: #eee;
+  object-position: center 25%;
+  border-radius: 10px;
+  border: 1px solid var(--line);
 }
 .identity h1 {
   font-size: clamp(36px, 4vw, 54px);
@@ -145,11 +155,14 @@ p, h1, h2, h3, figure { margin: 0; }
   .hero-description { font-size: 14px; }
 }
 @media (max-width: 850px) {
-  .hero { padding: 65px 0 75px; }
-  .identity { gap: 12px; }
-  .portrait { width: 65px; height: 65px; }
+  .hero { padding: 65px 0 75px; gap: 24px; }
+  .hero-photo { width: min(var(--hero-photo-width), 170px); }
   .identity h1 { font-size: clamp(36px, 6vw, 54px); }
   .work-grid { gap: 12px; }
+}
+@media (max-width: 690px) {
+  .hero { display: flex; flex-direction: column; align-items: flex-start; }
+  .hero-photo { order: -1; width: min(var(--hero-photo-width), 135px); align-self: flex-start; }
 }
 @media (max-width: 580px) {
   .site-shell { padding: 0 22px; }
@@ -158,8 +171,7 @@ p, h1, h2, h3, figure { margin: 0; }
   .site-header nav a { font-size: 11px; }
   .site-header nav a:nth-child(2) { display: none; }
   .hero { padding: 45px 0 65px; }
-  .identity { gap: 12px; margin-bottom: 18px; }
-  .portrait { width: 56px; height: 56px; }
+  .identity { margin-bottom: 18px; }
   .identity h1 { font-size: clamp(27px, 7.35vw, 40px); letter-spacing: -.065em; }
   .eyebrow { font-size: 10px; letter-spacing: .09em; }
   .hero-description { font-size: 14px; }
@@ -173,8 +185,7 @@ p, h1, h2, h3, figure { margin: 0; }
 }
 @media (max-width: 355px) {
   .site-shell { padding: 0 16px; }
-  .identity { gap: 8px; }
-  .portrait { width: 47px; height: 47px; }
+
   .identity h1 { font-size: 27px; }
   .site-header nav { gap: 10px; }
   .site-header nav a { font-size: 10px; }
